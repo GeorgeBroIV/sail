@@ -57,8 +57,6 @@
 				<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;composer require --dev stoneplayground/sail
 				<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;composer require --dev stoneplayground/sail
-				<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;composer update
 			</p>
 			<p>
@@ -106,6 +104,15 @@
 			</p>
 			<p>
 				echo ""
+			</p>
+			<p>
+				# Set write permissions in vendor subfolder
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;cd ./vendor/stoneplayground/sail/.git/objects
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;chmod -R +w pack
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;cd ../../../../../
 			</p>
 			<p>
 				# Display next steps
@@ -196,6 +203,10 @@ LIGHT_CYAN='\033[1;36m'
 WHITE='\033[1;37m'
 NC='\033[0m'
 echo ""
+# Set write permissions in vendor subfolder
+cd ./vendor/stoneplayground/sail/.git/objects
+chmod -R +w pack
+cd ../../../../../
 # Display next steps
 if sudo -n true 2>/dev/null; then
 sudo chown -R $USER: .

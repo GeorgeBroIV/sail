@@ -6,6 +6,10 @@
     RewriteEngine On
 
     # Redirect to HTTPS if not enabled
+    RewriteCond %{SERVER_PORT} 80
+    RewriteRule ^(.*)$ https://sail.stoneplayground.com/$1 [R,L]
+
+    # Redirect to public_html
     RewriteCond %{REQUEST_URI} !^public_html
     RewriteRule ^(.*)$ public_html/$1 [L]
 
