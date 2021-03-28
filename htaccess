@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect to HTTPS if not enabled
+    RewriteCond %{REQUEST_URI} !^public_html
+    RewriteRule ^(.*)$ public_html/$1 [L]
+
+</IfModule>
